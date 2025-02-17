@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import Head from 'next/head'
 import Image from 'next/image'
 import loading from '../../../public/images/loading.gif'
 import useAuth from '@/data/hook/useAuth'
 import router from 'next/router'
 
-export default function ForcarAutenticacao(props) {
+export default function ForcarAutenticacao(props: any) {
 
     const { usuario, carregando } = useAuth()
     
@@ -33,7 +35,7 @@ export default function ForcarAutenticacao(props) {
                 flex justify-center items-center
                 h-screen
             `}>
-                <Image src={loading} alt='' />
+                <Image src={loading} alt="Carregando" unoptimized />
             </div>
         )
     }

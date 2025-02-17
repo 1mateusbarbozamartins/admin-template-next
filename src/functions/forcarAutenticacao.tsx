@@ -6,12 +6,13 @@ import router from 'next/router'
 
 export default function forcarAutenticacao(jsx) {
 
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const { usuario, carregando } = useAuth()
     
     function renderizarConteudo() {
         return (
             <> 
-                <Head>
+                {/* <Head>
                     <script 
                         dangerouslySetInnerHTML={{
                             __html: `
@@ -21,7 +22,7 @@ export default function forcarAutenticacao(jsx) {
                             `
                         }}
                     />
-                </Head>
+                </Head> */}
                 {jsx}
             </>
         )
@@ -33,17 +34,18 @@ export default function forcarAutenticacao(jsx) {
                 flex justify-center items-center
                 h-screen
             `}>
-                <Image src={loading} alt='' />
+                <Image src={loading} alt="Carregando" unoptimized />
             </div>
         )
     }
 
-    if(!carregando && usuario?.email) {
-        return renderizarConteudo()
-    } else if (carregando) {
-        return renderizarCarregando()
-    } else {
-        router.push('/autenticacao')
-        return null
-    }
+    // if(!carregando && usuario?.email) {
+    //     return renderizarConteudo()
+    // } else if (carregando) {
+    //     return renderizarCarregando()
+    // } else {
+    //     router.push('/autenticacao')
+    //     return null
+    // }
+    return renderizarConteudo()
 }

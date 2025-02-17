@@ -9,7 +9,7 @@ interface AppContextProps {
 
 const AppContext = createContext<AppContextProps>({})
 
-export function AppProvider(props) {
+export function AppProvider(props: { children: string }) {
     const [tema, setTema] = useState('dark')
 
     function alternarTema() {
@@ -20,7 +20,7 @@ export function AppProvider(props) {
 
     useEffect(() => {
         const temaSalvo = localStorage.getItem('tema')
-        setTema(temaSalvo)
+        setTema(temaSalvo ?? '')
     }, [])
 
     return (

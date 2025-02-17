@@ -1,8 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import useAppData from "@/data/hook/useAppData"
 import Cabecalho from "./Cabecalho"
 import Conteudo from "./Conteudo"
 import MenuLateral from "./MenuLateral"
-// import ForcarAutenticacao from "../auth/ForcarAutenticacao"
 import forcarAutenticacao from "../../functions/forcarAutenticacao"
 
 interface LayoutProps {

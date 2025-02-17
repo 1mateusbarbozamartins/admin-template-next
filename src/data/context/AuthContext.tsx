@@ -68,16 +68,16 @@ export function AuthProvider(props) {
     }
 
     async function login(email, senha) {
-        const resp = await signInWithEmailAndPassword(auth, email, senha);
+        // const resp = await signInWithEmailAndPassword(auth, email, senha);
 
-        await configurarSessao(resp.user)
+        // await configurarSessao(resp.user)
         route.push('/');
     }
 
     async function cadastrar(email, senha) {
-        const resp = await createUserWithEmailAndPassword(auth, email, senha);
+        // const resp = await createUserWithEmailAndPassword(auth, email, senha);
 
-        await configurarSessao(resp.user)
+        // await configurarSessao(resp.user)
         route.push('/');
     }
 
@@ -86,6 +86,7 @@ export function AuthProvider(props) {
             setCarregando(true)
             await signOut(auth);
             await configurarSessao(null);
+            route.push('/autenticacao');
         } finally {
             setCarregando(false)
         }
