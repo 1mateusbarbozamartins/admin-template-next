@@ -26,7 +26,8 @@ export default function Autenticacao() {
                 await cadastrar(email, senha)
             }
         } catch (e) {
-            exibirErro(e?.message ?? 'Error desconhecido!')
+            const erro = e as Error;
+            exibirErro(erro.message ?? 'Erro desconhecido!');
         }
     }   
 

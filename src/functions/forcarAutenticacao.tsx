@@ -6,8 +6,9 @@ import Image from 'next/image'
 import loading from '../../public/images/loading.gif'
 import useAuth from '@/data/hook/useAuth'
 import router from 'next/router'
+import { ReactNode } from 'react'
 
-export default function forcarAutenticacao(jsx) {
+export default function forcarAutenticacao(jsx: ReactNode) {
 
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { usuario, carregando } = useAuth()
