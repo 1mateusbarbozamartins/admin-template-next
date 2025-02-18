@@ -68,9 +68,9 @@ export function AuthProvider(props: { children: ReactNode }) {
     }
 
     async function loginGoogle() {
-        const resp = await signInWithPopup(auth, new GoogleAuthProvider());
+        // const resp = await signInWithPopup(auth, new GoogleAuthProvider());
 
-        await configurarSessao(resp.user)
+        // await configurarSessao(resp.user)
         route.push('/');
     }
 
@@ -91,7 +91,7 @@ export function AuthProvider(props: { children: ReactNode }) {
     async function logout() {
         try {
             setCarregando(true)
-            await signOut(auth);
+            // await signOut(auth);
             await configurarSessao(null);
             route.push('/autenticacao');
         } finally {
@@ -101,8 +101,8 @@ export function AuthProvider(props: { children: ReactNode }) {
 
     useEffect(() => {
         if (Cookies.get('admin-template-cod3r-auth')) {
-            const cancelar = onIdTokenChanged(auth, configurarSessao); 
-            return () => cancelar()
+            // const cancelar = onIdTokenChanged(auth, configurarSessao); 
+            // return () => cancelar()
         } else {
             setCarregando(false)
         }
