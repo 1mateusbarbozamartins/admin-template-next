@@ -8,6 +8,8 @@ O painel estará disponivel em
 **Login**: padrao@teste.com
 **Senha**: teste
 
+Link de acesso em prod limitado apenas a visualização das telas: https://admin-template-next-u4xm.vercel.app/autenticacao
+
 ## Como Rodar o Projeto
 
 Para rodar o projeto, basta seguir esses passos:
